@@ -42,3 +42,16 @@ public class Portfolio {
         return sahamPortfolio;
     }
 
+    // Metode untuk SBN
+    public void beliSBN(String namaSBN, double nominal) {
+        sbnPortfolio.put(namaSBN, sbnPortfolio.getOrDefault(namaSBN, 0.0) + nominal);
+    }
+
+    public double getNominalSBN(String namaSBN) {
+        return sbnPortfolio.getOrDefault(namaSBN, 0.0);
+    }
+
+    public Map<String, Double> getAllSBN() {
+        return sbnPortfolio;
+    }
+}
