@@ -1,94 +1,41 @@
 package model;
 
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
+public class Account {
+    private String username;
+    private String password;
+    private String role; // "admin" or "customer"
+    private Portfolio portfolio;
 
-public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+    public Account(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
 
-    public static void main(String[] args) {
-        System.out.println("Selamat datang di Sistem Investasi!");
-
-        // Minta login dari pengguna
-        System.out.print("Masukkan username: ");
-        String username = scanner.nextLine();
-
-        System.out.print("Masukkan password: ");
-        String password = scanner.nextLine();
-
-        // Proses login
-        Account userAccount = Account.login(username, password);
-
-        // Jika login berhasil
-        if (userAccount != null) {
-            if (userAccount.isAdmin()) {
-                showAdminMenu(userAccount);
-            } else {
-                showCustomerMenu(userAccount);
-            }
-        } else {
-            System.out.println("Login gagal. Program akan keluar.");
+        // Initialize portfolio for customers
+        if (role.equalsIgnoreCase("customer")) {
+            this.portfolio = new Portfolio();
         }
     }
 
-    // Menu untuk Admin
-    public static void showAdminMenu(Account adminAccount) {
-        System.out.println("\nSelamat datang Admin!");
-        System.out.println("1. Saham");
-        System.out.println("2. SBN");
-        System.out.println("3. Logout");
-        System.out.print("Pilih menu: ");
-
-        int choice = Integer.parseInt(scanner.nextLine());
-        switch (choice) {
-            case 1:
-                // Tambah saham, ubah harga, dll
-                break;
-            case 2:
-                // Tambah SBN, dll
-                break;
-            case 3:
-                System.out.println("Logout berhasil.");
-                break;
-            default:
-                System.out.println("Pilihan tidak valid.");
-        }
+    // Getters
+    public String getUsername() {
+        return username;
     }
 
-    // Menu untuk Customer
-    public static void showCustomerMenu(Account customerAccount) {
-        System.out.println("\nSelamat datang Customer!");
-        System.out.println("1. Beli Saham");
-        System.out.println("2. Jual Saham");
-        System.out.println("3. Beli SBN");
-        System.out.println("4. Simulasi SBN");
-        System.out.println("5. Portofolio");
-        System.out.println("6. Logout");
-        System.out.print("Pilih menu: ");
-
-        int choice = Integer.parseInt(scanner.nextLine());
-        switch (choice) {
-            case 1:
-                // Beli saham
-                break;
-            case 2:
-                // Jual saham
-                break;
-            case 3:
-                // Beli SBN
-                break;
-            case 4:
-                // Simulasi SBN
-                break;
-            case 5:
-                // Tampilkan portofolio
-                showPortfolio(customerAccount);
-                break;
-            case 6:
-                System.out.println("Logout berhasil.");
-                break;
-            default:
-                System.out.println("Pilihan tidak valid.");
-        }
+    public String getPassword() {
+        return password;
     }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
+
+    // Authentication method
+    public boolean authenticate(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
+}
