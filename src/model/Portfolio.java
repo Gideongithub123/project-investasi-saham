@@ -4,57 +4,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Portfolio {
-    // Menyimpan saham yang dimiliki
-    private Map<Saham, Integer> saham;
-    // Menyimpan SBN yang dimiliki
-    private Map<SuratBerhargaNegara, Double> sbn;
+    // Menyimpan data saham (kode saham, jumlah lembar)
+    private Map<String, Integer> sahamPortfolio;
+
+    // Menyimpan data SBN (nama SBN, nominal investasi)
+    private Map<String, Double> sbnPortfolio;
 
     public Portfolio() {
-        saham = new HashMap<>();
-        sbn = new HashMap<>();
+        this.sahamPortfolio = new HashMap<>();
+        this.sbnPortfolio = new HashMap<>();
     }
 
-    // Menambahkan saham ke portofolio
-    public void addSaham(Saham saham, int jumlahLembar) {
-        // Jika saham sudah ada, tambah jumlah lembar yang dimiliki
-        if (this.saham.containsKey(saham)) {
-            this.saham.put(saham, this.saham.get(saham) + jumlahLembar);
-        } else {
-            this.saham.put(saham, jumlahLembar);
-        }
+    // Metode untuk saham
+    public void beliSaham(String kodeSaham, int jumlahLembar) {
+        sahamPortfolio.put(kodeSaham, sahamPortfolio.getOrDefault(kodeSaham, 0) + jumlahLembar);
     }
 
-    // Menghapus saham dari portofolio
-    public void removeSaham(Saham saham, int jumlahLembar) {
-        if (this.saham.containsKey(saham)) {
-            int jumlahSahamSekarang = this.saham.get(saham);
-            // Kurangi jumlah lembar saham yang dimiliki
-            if (jumlahSahamSekarang > jumlahLembar) {
-                this.saham.put(saham, jumlahSahamSekarang - jumlahLembar);
+    public boolean jualSaham(String kodeSaham, int jumlahLembar) {
+        int lembarDimiliki = sahamPortfolio.getOrDefault(kodeSaham, 0);
+        if (lembarDimiliki >= jumlahLembar) {
+            int sisaLembar = lembarDimiliki - jumlahLembar;
+            if (sisaLembar == 0) {
+                sahamPortfolio.remove(kodeSaham);
             } else {
-                // Hapus saham jika sudah tidak ada lagi yang dimiliki
-                this.saham.remove(saham);
+                sahamPortfolio.put(kodeSaham, sisaLembar);
             }
+            return true;
         }
+        return false;
     }
 
-    // Menambahkan SBN ke portofolio
-    public void addSBN(SuratBerhargaNegara sbn, double nominal) {
-        // Jika SBN sudah ada, tambah nominal yang dimiliki
-        if (this.sbn.containsKey(sbn)) {
-            this.sbn.put(sbn, this.sbn.get(sbn) + nominal);
-        } else {
-            this.sbn.put(sbn, nominal);
-        }
+    public int getJumlahLembarSaham(String kodeSaham) {
+        return sahamPortfolio.getOrDefault(kodeSaham, 0);
     }
 
-    // Mengambil daftar saham yang dimiliki
-    public Map<Saham, Integer> getSaham() {
-        return saham;
+    public Map<String, Integer> getAllSaham() {
+        return sahamPortfolio;
     }
 
-    // Mengambil daftar SBN yang dimiliki
-    public Map<SuratBerhargaNegara, Double> getSBN() {
-        return sbn;
-    }
-}
