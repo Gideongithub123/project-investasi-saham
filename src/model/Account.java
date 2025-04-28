@@ -4,55 +4,91 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Account {
-    private String username;
-    private String password;
-    private boolean isAdmin;
-    private Portfolio portfolio;  // Menggunakan kelas Portfolio yang sudah dibahas sebelumnya
+public class Main {
+    private static Scanner scanner = new Scanner(System.in);
 
-    public Account(String username, String password, boolean isAdmin) {
-        this.username = username;
-        this.password = password;
-        this.isAdmin = isAdmin;
-        this.portfolio = new Portfolio();  // Setiap akun memiliki portofolio saham dan SBN
-    }
+    public static void main(String[] args) {
+        System.out.println("Selamat datang di Sistem Investasi!");
 
-    // Getter untuk username
-    public String getUsername() {
-        return username;
-    }
+        // Minta login dari pengguna
+        System.out.print("Masukkan username: ");
+        String username = scanner.nextLine();
 
-    // Getter untuk password
-    public String getPassword() {
-        return password;
-    }
+        System.out.print("Masukkan password: ");
+        String password = scanner.nextLine();
 
-    // Getter untuk status Admin
-    public boolean isAdmin() {
-        return isAdmin;
-    }
+        // Proses login
+        Account userAccount = Account.login(username, password);
 
-    // Mengakses portofolio akun
-    public Portfolio getPortfolio() {
-        return portfolio;
-    }
-
-    // Login dengan username dan password
-    public static Account login(String username, String password) {
-        // List akun admin dan customer yang sudah terdaftar
-        Account adminAccount = new Account("admin", "adminpass", true);
-        Account customerAccount = new Account("customer", "customerpass", false);
-
-        // Validasi login
-        if (username.equals(adminAccount.getUsername()) && password.equals(adminAccount.getPassword())) {
-            System.out.println("Login sebagai Admin berhasil!");
-            return adminAccount;
-        } else if (username.equals(customerAccount.getUsername()) && password.equals(customerAccount.getPassword())) {
-            System.out.println("Login sebagai Customer berhasil!");
-            return customerAccount;
+        // Jika login berhasil
+        if (userAccount != null) {
+            if (userAccount.isAdmin()) {
+                showAdminMenu(userAccount);
+            } else {
+                showCustomerMenu(userAccount);
+            }
         } else {
-            System.out.println("Login gagal! Username atau password salah.");
-            return null;
+            System.out.println("Login gagal. Program akan keluar.");
         }
     }
-}
+
+    // Menu untuk Admin
+    public static void showAdminMenu(Account adminAccount) {
+        System.out.println("\nSelamat datang Admin!");
+        System.out.println("1. Saham");
+        System.out.println("2. SBN");
+        System.out.println("3. Logout");
+        System.out.print("Pilih menu: ");
+
+        int choice = Integer.parseInt(scanner.nextLine());
+        switch (choice) {
+            case 1:
+                // Tambah saham, ubah harga, dll
+                break;
+            case 2:
+                // Tambah SBN, dll
+                break;
+            case 3:
+                System.out.println("Logout berhasil.");
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+        }
+    }
+
+    // Menu untuk Customer
+    public static void showCustomerMenu(Account customerAccount) {
+        System.out.println("\nSelamat datang Customer!");
+        System.out.println("1. Beli Saham");
+        System.out.println("2. Jual Saham");
+        System.out.println("3. Beli SBN");
+        System.out.println("4. Simulasi SBN");
+        System.out.println("5. Portofolio");
+        System.out.println("6. Logout");
+        System.out.print("Pilih menu: ");
+
+        int choice = Integer.parseInt(scanner.nextLine());
+        switch (choice) {
+            case 1:
+                // Beli saham
+                break;
+            case 2:
+                // Jual saham
+                break;
+            case 3:
+                // Beli SBN
+                break;
+            case 4:
+                // Simulasi SBN
+                break;
+            case 5:
+                // Tampilkan portofolio
+                showPortfolio(customerAccount);
+                break;
+            case 6:
+                System.out.println("Logout berhasil.");
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+        }
+    }
