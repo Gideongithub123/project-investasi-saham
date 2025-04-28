@@ -2,4 +2,4 @@ package model;
 
 public class Saham {
 }
-//menambah produk saham
+//menambah produk sahama
