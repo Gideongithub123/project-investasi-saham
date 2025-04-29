@@ -1,6 +1,7 @@
 package model;
 
 public class Saham {
+
     private String kode;               // Kode unik saham
     private String namaPerusahaan;     // Nama perusahaan penerbit saham
     private double harga;              // Harga per lembar saham
@@ -22,4 +23,6 @@ public class Saham {
     public String toString() {
         return kode + " - " + namaPerusahaan + " @ Rp" + harga;
     }
+}
+
 }
