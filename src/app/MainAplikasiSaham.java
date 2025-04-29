@@ -32,3 +32,21 @@ public class MainAplikasiSaham {
         }
     }
 
+    private static void initData() {
+        // Buat akun admin dan customer
+        accounts.add(new Account("admin", "admin123", "admin"));
+        accounts.add(new Account("customer", "customer123", "customer"));
+
+        // Buat beberapa data saham awal
+        daftarSaham.add(new Saham("GOTO", "GoTo Gojek Tokopedia Tbk.", 9000));
+        daftarSaham.add(new Saham("PGEO", "Pertamina Geothermal Energy Tb", 2000));
+        daftarSaham.add(new Saham("INDF", "Indofood Sukses Makmur Tbk.", 4500));
+        daftarSaham.add(new Saham("BUKA", "Bukalapak.com TBK", 5000));
+
+        // Buat beberapa data SBN awal
+        LocalDate now = LocalDate.now();
+        daftarSBN.add(new SuratBerhargaNegara("SBR010", 6.25, 24, now.plusMonths(24), 1000000000));
+        daftarSBN.add(new SuratBerhargaNegara("ORI020", 5.70, 36, now.plusMonths(36), 2000000000));
+    }
+
+
