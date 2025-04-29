@@ -1,5 +1,5 @@
 ## Aplikasi Investasi Saham dan SBN ##
-Jadi ini merupakan platform pembelian saham dan Surat Berharga Negara (SBN) yang memungkinkan pengguna untuk melakukan pembelian saham. Aplikasi ini memiliki dua jenis pengguna utama: admin dan customer.
+Jadi ini merupakan program pembelian saham dan Surat Berharga Negara (SBN) yang memungkinkan pengguna untuk melakukan pembelian saham. Aplikasi ini memiliki dua jenis pengguna utama: admin dan customer.
 Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN yang tersedia di dalam sistem. Sementara itu, customer dapat melakukan pembelian saham dan SBN secara langsung melalui aplikasi, juga melihat simulasi sbn secara langsung, serta dapat melihat portofolio kepemilikan mereka.
 
 
@@ -12,7 +12,9 @@ Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN
 - [Tentang Aplikasi](#tentang-aplikasi)
 - [Fitur](#fitur)
 - [Cara Penggunaan](#cara-penggunaan)
-
+- [Skenario Kode Program](#skenario-kode-program)
+  -Register Aplikasi
+  
 ## Tentang Aplikasi
 Aplikasi ini adalah...
 
@@ -24,6 +26,15 @@ Aplikasi ini adalah...
 1. Admin login dan tambah saham
 2. Customer mendaftar dan membeli
 
-## Struktur Code ##
+## Skenario Kode Program
+## Register
 
-##
+## Login Sebagai Admin
+
+## Menambah Saham
+
+## Menambah SBN
+
+## Login sebagai Customer
+
+
