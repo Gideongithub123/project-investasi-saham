@@ -48,10 +48,12 @@ public class Portfolio {
     }
 
     public double getNominalSBN(String namaSBN) {
+
         return sbnPortfolio.getOrDefault(namaSBN, 0.0);
     }
 
     public Map<String, Double> getAllSBN() {
+
         return sbnPortfolio;
     }
 }
