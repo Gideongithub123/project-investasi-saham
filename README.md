@@ -69,4 +69,4 @@ Selanjutnya kembali pilih login
 
 
 ## Diagram UML
-
+![Uml-Aplikasi-Saham-java](https://github.com/user-attachments/assets/29ae1bfb-2640-4532-a844-909f7e31ad4d)
