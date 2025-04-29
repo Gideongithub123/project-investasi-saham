@@ -24,5 +24,3 @@ public class Saham {
         return kode + " - " + namaPerusahaan + " @ Rp" + harga;
     }
 }
-
-}
