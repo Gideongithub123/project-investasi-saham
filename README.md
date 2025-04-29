@@ -10,6 +10,7 @@ Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN
 
 ## Daftar Isi
 - [Skenario Kode Program](#skenario-kode-program)
+- [Menjalankan Kode Program](#menjalankan-kode-program)
   - [Register]
   - [Login sebagai admin]
     - [Menambah Saham]
@@ -20,18 +21,9 @@ Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN
     - [Membeli Saham]
 - [Diagram UML](#diagram-uml)
   
-## Tentang Aplikasi
-Aplikasi ini adalah...
-
-## Fitur
-- Admin dapat mengelola data saham dan SBN
-- Customer dapat membeli dan melihat portofolio
-
-## Cara Penggunaan
-1. Admin login dan tambah saham
-2. Customer mendaftar dan membeli
-
+## Menjalankan Kode Program
 ## Skenario Kode Program
+## Menjalankan Kode Program
 ## Register
 
 ## Login Sebagai Admin
