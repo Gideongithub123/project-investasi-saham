@@ -1,6 +1,8 @@
 package model;
 
 import java.time.LocalDate;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 // Kelas untuk SBN
 public class SuratBerhargaNegara {
@@ -42,9 +44,11 @@ public class SuratBerhargaNegara {
     }
 
     // Menampilkan informasi SBN
+
     @Override
     public String toString() {
+        NumberFormat formatter = NumberFormat.getInstance(new Locale("id", "ID"));
         return nama + " - Bunga: " + bunga + "%, Jangka waktu: " + jangkaWaktu +
-                " bulan, Kuota tersedia: Rp " + getKuotaTersedia();
+                " bulan, Kuota tersedia: Rp " + formatter.format(getKuotaTersedia());
     }
 }
