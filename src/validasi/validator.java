@@ -41,3 +41,16 @@ public class validator {
             }
         }
     }
+
+    public static String getStringInput(String prompt) {
+        String input;
+        do {
+            System.out.print(prompt);
+            input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                System.out.println("Input tidak boleh kosong.");
+            }
+        } while (input.isEmpty());
+        return input;
+    }
+
