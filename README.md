@@ -39,8 +39,8 @@ Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN
 ![image](https://github.com/user-attachments/assets/d1f116ca-bcdc-48dc-8263-5ee16ded1660)
 
 ## Login sebagai Customer
-![image](https://github.com/user-attachments/assets/0a87e5de-e18e-4918-bb05-c82276542167)
-Selanjutnya kembali pilih login 
+![image](https://github.com/user-attachments/assets/0a87e5de-e18e-4918-bb05-c82276542167)  
+Selanjutnya kembali pilih login  
 ![image](https://github.com/user-attachments/assets/71bd2f32-51c9-4719-a21b-79c05d610e67)  
 ![image](https://github.com/user-attachments/assets/e8935ad3-c983-4590-aa1f-4033e8c290f4)
 
@@ -69,4 +69,5 @@ Selanjutnya kembali pilih login
 
 
 ## Diagram UML
+Keseluruhan diagram menunjukkan sistem yang memungkinkan pengguna untuk melakukan login, membeli/menjual produk investasi, dan melihat portofolio mereka, sementara admin dapat mengelola produk yang tersedia.RetryClaude can make mistakes. Please double-check responses.  
 ![Uml-Aplikasi-Saham-java](https://github.com/user-attachments/assets/29ae1bfb-2640-4532-a844-909f7e31ad4d)
