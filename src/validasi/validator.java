@@ -54,3 +54,16 @@ public class validator {
         return input;
     }
 
+    public static LocalDate getDateInput(String prompt) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        while (true) {
+            System.out.print(prompt + " (format: DD/MM/YYYY): ");
+            String input = scanner.nextLine();
+            try {
+                return LocalDate.parse(input, formatter);
+            } catch (DateTimeParseException e) {
+                System.out.println("Format tanggal tidak valid. Gunakan format DD/MM/YYYY.");
+            }
+        }
+    }
+}
