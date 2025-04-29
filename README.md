@@ -9,11 +9,16 @@ Admin memiliki akses untuk menambah, menghapus, dan mengelola data saham dan SBN
 
 
 ## Daftar Isi
-- [Tentang Aplikasi](#tentang-aplikasi)
-- [Fitur](#fitur)
-- [Cara Penggunaan](#cara-penggunaan)
 - [Skenario Kode Program](#skenario-kode-program)
-  -Register Aplikasi
+  - [Register]
+  - [Login sebagai admin]
+    - [Menambah Saham]
+    - [Menambah SBN]
+    - [Menghapus Saham]
+    - [Menghapus SBN]
+  - [Login sebagai customer]
+    - [Membeli Saham]
+- [Diagram UML](#diagram-uml)
   
 ## Tentang Aplikasi
 Aplikasi ini adalah...
@@ -36,5 +41,5 @@ Aplikasi ini adalah...
 ## Menambah SBN
 
 ## Login sebagai Customer
-
+## Diagram UML
 
