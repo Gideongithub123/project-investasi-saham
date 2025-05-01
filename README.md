@@ -80,5 +80,5 @@ Saat kita sebagai customer, setelah melakukan pembelian saham atau SBN bisa dili
 
 
 ## Diagram UML
-Keseluruhan diagram menunjukkan sistem yang memungkinkan pengguna untuk melakukan login, membeli/menjual produk investasi, dan melihat portofolio mereka, sementara admin dapat mengelola produk yang tersedia.RetryClaude can make mistakes. Please double-check responses.  
+Keseluruhan diagram menunjukkan sistem yang memungkinkan pengguna untuk melakukan login, membeli/menjual produk investasi, dan melihat portofolio mereka, sementara admin dapat mengelola produk yang tersedia.
 ![Uml-Aplikasi-Saham-java](https://github.com/user-attachments/assets/29ae1bfb-2640-4532-a844-909f7e31ad4d)
